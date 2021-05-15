@@ -15,7 +15,7 @@ import { CountdownPipe } from './countdown.pipe';
     QuoteComponent,
     QuoteDetailComponent,
     QuoteFormComponent,
-    CountdownPipe
+    CountdownPipe,
   ],
   imports: [
     BrowserModule,

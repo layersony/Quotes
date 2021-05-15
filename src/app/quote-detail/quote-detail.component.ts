@@ -11,7 +11,8 @@ export class QuoteDetailComponent implements OnInit {
   @Input() quote !: Quote;
   @Output() upV = new EventEmitter<number>();
   @Output() dwV = new EventEmitter<number>();
-  
+  @Output() todelete = new EventEmitter<boolean>();
+
   vU:number = 0;
   vD:number = 0;
 
@@ -27,5 +28,7 @@ export class QuoteDetailComponent implements OnInit {
   votedown(){
     this.dwV.emit(this.vD)
   }
-
+  deletequote(todele:boolean){
+    this.todelete.emit(todele)
+  }
 }

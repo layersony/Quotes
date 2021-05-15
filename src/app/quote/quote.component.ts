@@ -35,7 +35,15 @@ export class QuoteComponent implements OnInit {
     this.quotearr[index].upvote = addvote;
   }
   dwVt(event:number, index:number){
-    let dwvote = this.quotearr[index].downvote - 1;
+    let dwvote = this.quotearr[index].downvote + 1;
     this.quotearr[index].downvote = dwvote;
+  }
+  todeleQuote(todele:boolean, index:number){
+    if (todele){
+      let deleteQuote = confirm(`Are you sure you want to delete ${this.quotearr[index].title}`);
+      if (deleteQuote){
+        this.quotearr.splice(index,1);
+      }
+    }
   }
 }
