@@ -21,7 +21,13 @@ export class QuoteComponent implements OnInit {
 
   showDetail(index:number){
     this.quotearr[index].showquotes = !this.quotearr[index].showquotes;
-    console.log(this.quotearr[index])
   }
-  
+
+  addquote(event:any){
+    let quotelength = this.quotearr.length;
+    event.id = quotelength+1;
+    event.dateupload = new Date(event.dateupload)
+    this.quotearr.push(event);
+  }
+
 }
