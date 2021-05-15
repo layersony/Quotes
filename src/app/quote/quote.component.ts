@@ -9,7 +9,7 @@ import { Quote } from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotearr: Quote[] = [
-    new Quote(1, 'trial', 'trialtrialtrial', 'long list of trial', 33, 20, 'Maingi', new Date(2020,1,1)),
+    new Quote(1, 'Spiritual', 'I have so much to do that I shall spend the first three hours in prayer.', 'Martin Luther', 33, 20, 'Maingi', new Date(2020,1,1)),
     new Quote(2, 'trial2', 'trialtrialtrial2222222', 'long list of trial2', 75, 12, 'Maingi', new Date(2020,1,1)),
     new Quote(3, 'trial3', 'trialtrialtrial33333333', 'long list of trial3', 75, 12, 'Maingi', new Date(2020,1,1))
   ]
@@ -30,4 +30,12 @@ export class QuoteComponent implements OnInit {
     this.quotearr.push(event);
   }
 
+  upVt(event:number, index:number){
+    let addvote = this.quotearr[index].upvote + 1;
+    this.quotearr[index].upvote = addvote;
+  }
+  dwVt(event:number, index:number){
+    let dwvote = this.quotearr[index].downvote - 1;
+    this.quotearr[index].downvote = dwvote;
+  }
 }

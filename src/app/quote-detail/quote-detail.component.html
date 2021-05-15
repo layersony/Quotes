@@ -1,3 +1,9 @@
-<p>Will be displayed on right div</p>
-<div>{{ quote.title}}</div>
-
+<p>{{ quote.title}}</p>
+<p>Quote --> {{ quote.quoteline }}</p>
+<p>Author {{ quote.author }}</p>
+<p>Up Votes {{ quote.upvote }}</p>
+<input type="button" value="up" (click)='voteUp()'>
+<p>Down Votes {{ quote.downvote }}</p>
+<input type="button" value="down" (click)='votedown()'>
+<p>submitted by {{ quote.subBywho }}</p>
+<p>{{ quote.dateupload | countdown }}</p>

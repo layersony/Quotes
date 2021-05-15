@@ -1,11 +1,11 @@
 <hr>
 <h1>Quote list</h1>
 <div class="list" *ngFor="let quote of quotearr;let qnum = index">
-  <p>{{ quote.id }}. Title of {{ quote.title }}</p>
+  <p>{{ quote.id }}. {{ quote.title }}</p>
   <button (click)='showDetail(qnum)'>View More</button>
 
   <div *ngIf='quote.showquotes'>
-    <app-quote-detail [quote]="quote"></app-quote-detail>
+    <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'></app-quote-detail>
   </div>
 </div>
 
