@@ -1,7 +1,7 @@
 <h3>Add or Remove Quote</h3>
 
 <div class="ad-quote">
-  <form>
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
     <div class="form-group">
       <label for="name">Title</label>
       <input type="text" id="name" class="form-control" required>
