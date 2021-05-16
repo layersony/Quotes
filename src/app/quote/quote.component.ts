@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Quote } from '../quote'
 
 @Component({
@@ -11,17 +11,16 @@ export class QuoteComponent implements OnInit {
   quotearr: Quote[] = [
     new Quote(1, 'Spiritual', 'I have so much to do that I shall spend the first three hours in prayer.', 'Martin Luther', 33, 20, 'Maingi', new Date(2020,1,1)),
     new Quote(2, 'trial2', 'trialtrialtrial2222222', 'long list of trial2', 75, 12, 'Maingi', new Date(2020,1,1)),
-    new Quote(3, 'trial3', 'trialtrialtrial33333333', 'long list of trial3', 75, 12, 'Maingi', new Date(2020,1,1))
+    new Quote(3, 'trial3', 'trialtrialtrial33333333', 'long list of trial3', 54, 76, 'Maingi', new Date(2020,1,1))
   ]
 
-  // getHighest(index:number){
-  //   let maxLength = Math.max(...this.quotearr[index].upvote)
-  //   console.log(maxLength)
-  // }
+  highest: boolean = false
+
   
   constructor() { }
 
   ngOnInit(): void {
+    this.maxvalue(this.quotearr)
   }
 
   showDetail(index:number){
@@ -45,11 +44,31 @@ export class QuoteComponent implements OnInit {
   }
   todeleQuote(todele:boolean, index:number){
     if (todele){
-      let deleteQuote = confirm(`Are you sure you want to delete ${this.quotearr[index].title}`);
+      let deleteQuote = confirm(`Are you sure you want to delete --> ${this.quotearr[index].title}`);
       if (deleteQuote){
         this.quotearr.splice(index,1);
       }
     }
   }
 
+
+  maxvalue(arr:any){
+    let fun = Number.MIN_VALUE;
+    let arrnum = 0
+
+    for (let i=0; i<arr.length;i++){
+      if(arr[i].upvote>fun){
+        fun = arr[i].upvote
+        arrnum = i
+        if (this.highest == false){
+          this.checkitout
+        }
+      }
+    }
+    return arrnum;
+  }
+
+  checkitout(){
+    this.highest = !this.highest;
+  }
 }

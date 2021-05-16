@@ -1,15 +1,17 @@
 <hr>
 <h1>Quote list</h1>
 <div class="list" *ngFor="let quote of quotearr;let qnum = index">
-  <p appHighlight>{{ qnum+1 }}. {{ quote.title }}</p>
-  <p>Up Votes {{ quote.upvote }}  || Down Votes {{ quote.downvote }}</p>
-  <button (click)='showDetail(qnum)'>View More</button>
+  <div [ngClass]= '{"ishighest": highest}'>
+    <p>{{ qnum+1 }}. {{ quote.title }}</p>
+    <p>Up Votes {{ quote.upvote }} || Down Votes {{ quote.downvote }}</p>
+    <button (click)='showDetail(qnum)'>View More</button>
 
-  <div *ngIf='quote.showquotes'>
-    <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)' (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+    <div *ngIf='quote.showquotes'>
+      <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'
+        (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+    </div>
   </div>
 </div>
-<!-- <button (click)='getHighest()'>Press me</button> -->
 <div class="formquote">
   <app-quote-form (addQuote)='addquote($event)'></app-quote-form>
 </div>
