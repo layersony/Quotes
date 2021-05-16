@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Quote } from '../quote'
 
 @Component({
@@ -14,6 +14,11 @@ export class QuoteComponent implements OnInit {
     new Quote(3, 'trial3', 'trialtrialtrial33333333', 'long list of trial3', 75, 12, 'Maingi', new Date(2020,1,1))
   ]
 
+  // getHighest(index:number){
+  //   let maxLength = Math.max(...this.quotearr[index].upvote)
+  //   console.log(maxLength)
+  // }
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -46,4 +51,5 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
+
 }
