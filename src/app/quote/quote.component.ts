@@ -22,11 +22,15 @@ export class QuoteComponent implements OnInit {
 
   highest: boolean = false
 
-  
+  public show:boolean = false;
+  public hide:boolean= true
+  public buttonName:any = 'Show';
+  public hidequote:any = 'hide'
+
   constructor() { }
 
   ngOnInit(): void {
-    this.maxvalue(this.quotearr)
+    this.maxvalue()
   }
 
   showDetail(index:number){
@@ -58,23 +62,32 @@ export class QuoteComponent implements OnInit {
   }
 
 
-  maxvalue(arr:any){
+  maxvalue(){
     let fun = Number.MIN_VALUE;
-    let arrnum = 0
+    let arr = this.quotearr
 
     for (let i=0; i<arr.length;i++){
       if(arr[i].upvote>fun){
         fun = arr[i].upvote
-        arrnum = i
-        if (this.highest == false){
-          this.checkitout
-        }
       }
     }
-    return arrnum;
+    return fun;
   }
 
-  checkitout(){
-    this.highest = !this.highest;
+
+
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
+
+    if(this.show)  
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+
+    if(this.hide)
+      this.hidequote = 'Show';
+    else(this.hide)
+      this.hidequote = 'hide'
   }
 }

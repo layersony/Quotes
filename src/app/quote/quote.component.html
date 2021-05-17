@@ -4,31 +4,34 @@
       <h1>Quotes</h1>
     </div>
     <div class="col-md-6">
-      <button class="btn btn-success btn-md">Add Quote</button>
+      <button class="btn btn-success btn-md m-2" (click)="toggle()">Add Quote</button>
+      <button class="btn btn-success btn-md m-2" (click)="toggle()">List Quotes</button>
+
     </div>
   </div>
 
-  <div class="row justify-content-center align-items-center">
-  <div class="thelist">
-    <div class="list" *ngFor="let quote of quotearr;let qnum = index">
-      <div [ngClass]='{"ishighest": highest}' class="quotelist">
-        <fa-icon [icon]="faQuoteLeft" class="qicon"></fa-icon>
-        <h4>{{ quote.title }} </h4>
-        <p id="vpara"><fa-icon [icon]="faHeart" id="tup"></fa-icon> {{ quote.upvote }}   <fa-icon [icon]="faHeartBroken" id="tdown"></fa-icon> {{ quote.downvote }}</p>
-        <button (click)='showDetail(qnum)' class="btn btn-md">View Quote</button>
+  <div class="row justify-content-center align-items-center" *ngIf="hide">
+    <div class="thelist">
+      <div class="list" *ngFor="let quote of quotearr;let qnum = index">
+        <div  class="quotelist" [class.ishigh]="maxvalue()==quote.upvote">
+          <fa-icon [icon]="faQuoteLeft" class="qicon"></fa-icon>
+          <h4>{{ quote.title }} </h4>
+          <p id="vpara">
+            <fa-icon [icon]="faHeart" id="tup"></fa-icon> {{ quote.upvote }} <fa-icon [icon]="faHeartBroken" id="tdown">
+            </fa-icon> {{ quote.downvote }}
+          </p>
+          <button (click)='showDetail(qnum)' class="btn btn-md">View Quote</button>
 
-        <div *ngIf='quote.showquotes'>
-          <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'
-            (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+          <div *ngIf='quote.showquotes'>
+            <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'
+              (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-  <hr>
-</div>
-
-<div class="formquote">
+<div class="formquote"  *ngIf="show">
   <app-quote-form (addQuote)='addquote($event)'></app-quote-form>
 </div>

@@ -2,6 +2,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+
 .qicon{
   color: black;
   font-size: 25px;
@@ -77,6 +78,10 @@
 }
 /*Add Quotes*/
 .formquote{
-  background-color: green;
   padding: 10px;
+}
+
+.ishigh{
+  background-color: maroon;
+  color: white;
 }
