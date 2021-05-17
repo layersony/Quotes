@@ -1,3 +1,47 @@
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .ishighest{
   background: yellow;
+}
+
+.home{
+  background-color: blue;
+  padding: 10px;
+}
+
+.list{
+  background-color: blueviolet;
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+.headerq h1{
+  margin-right: 50px;
+  font-size: 60px;
+  transition: ease-in-out 4s;
+}
+
+.header button{
+  width: 150px;
+  font-size: 20px;
+  float: right;
+}
+.header button:hover{
+  width: 150px;
+  font-size: 20px;
+  float: right;
+  color: black;
+}
+
+.quotelist{
+  background-color: beige;
+  padding: 10px 5px;
+  max-width: 50%;
+}
+/*Add Quotes*/
+.formquote{
+  background-color: green;
+  padding: 10px;
 }

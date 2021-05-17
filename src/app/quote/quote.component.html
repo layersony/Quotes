@@ -1,18 +1,27 @@
-<hr>
-<h1>Quote list</h1>
-<div class="list" *ngFor="let quote of quotearr;let qnum = index">
-  <div [ngClass]= '{"ishighest": highest}'>
-    <p>{{ qnum+1 }}. {{ quote.title }}</p>
-    <p>Up Votes {{ quote.upvote }} || Down Votes {{ quote.downvote }}</p>
-    <button (click)='showDetail(qnum)'>View More</button>
-
-    <div *ngIf='quote.showquotes'>
-      <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'
-        (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+<div class="home container">
+  <div class="header row justify-content-center align-items-center bg-secondary">
+    <div class='col-md-6 headerq text-white'>
+      <h1>Quotes</h1>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-success btn-md">Add Quote</button>
     </div>
   </div>
+  <div class="list" *ngFor="let quote of quotearr;let qnum = index">
+    <div [ngClass]='{"ishighest": highest}' class="quotelist">
+      <h4>{{ qnum+1 }}. {{ quote.title }}</h4>
+      <p>Up Votes {{ quote.upvote }} || Down Votes {{ quote.downvote }}</p>
+      <button (click)='showDetail(qnum)' class="btn btn-primary btn-md">View Quote</button>
+
+      <div *ngIf='quote.showquotes'>
+        <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'
+          (todelete)='todeleQuote($event, qnum)'></app-quote-detail>
+      </div>
+    </div>
+  </div>
+  <hr>
 </div>
+
 <div class="formquote">
   <app-quote-form (addQuote)='addquote($event)'></app-quote-form>
 </div>
-<hr>
