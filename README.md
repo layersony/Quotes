@@ -13,7 +13,7 @@ It's a Web App were People add their quotes or other peoples quotes. One can cho
 ## Access the website
 Need the latest browser to be able to View
 
-Follow this link 
+Follow this link https://layersony.github.io/Quotes/
 
 It is hosted by github.
 
@@ -22,12 +22,12 @@ It is hosted by github.
 ### Setup
 To access this project on your local files, you can clone it using these steps
 1. Open your terminal
-1. Use this command to clone `$ git clone https://github.com/layersony/portfolio.git`
+1. Use this command to clone `https://github.com/layersony/Quotes.git`
 1. This will clone the repositoty into your local folder
 1. __Enjoy :)__
 
 #### Development server
-
+Make sure you have install `Node Js`, `Angular` & `Node Package Manager`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Technologies Used
