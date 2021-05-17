@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote'
 import { faQuoteLeft, faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,9 +15,9 @@ export class QuoteComponent implements OnInit {
   faQuoteLeft = faQuoteLeft;
   
   quotearr: Quote[] = [
-    new Quote(1, 'Spiritual', 'I have so much to do that I shall spend the first three hours in prayer.', 'Martin Luther', 33, 20, 'Maingi', new Date(2020,1,1)),
-    new Quote(2, 'trial2', 'trialtrialtrial2222222', 'long list of trial2', 75, 12, 'Maingi', new Date(2020,1,1)),
-    new Quote(3, 'trial3', 'trialtrialtrial33333333', 'long list of trial3', 54, 76, 'Maingi', new Date(2020,1,1))
+    new Quote(1, 'Spiritual', 'I have so much to do that I shall spend the first three hours in prayer.', 'Martin Luther', 15, 6, 'Maingi', new Date("Sun May 16 2021 12:29:52 GMT+0300 (East Africa Time)")),
+    new Quote(2, 'Life', "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best", 'Marilyn Monroe', 20, 12, 'Scarlet', new Date("Mon May 17 2021 18:45:52 GMT+0300 (East Africa Time)")),
+    new Quote(3, 'Success', "I can't give you a sure-fire formula for success, but I can give you a formula for failure: try to please everybody all the time", 'Herbert Bayard Swope', 11, 32, 'Stella', new Date("Mon May 17 2021 11:55:52 GMT+0300 (East Africa Time)"))
   ]
 
   highest: boolean = false
