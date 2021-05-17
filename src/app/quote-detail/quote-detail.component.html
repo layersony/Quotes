@@ -1,11 +1,18 @@
-<p>{{ quote.title}}</p>
-<p>Quote --> {{ quote.quoteline }}</p>
-<p>Author {{ quote.author }}</p>
-<p>Up Votes {{ quote.upvote }}</p>
-<input type="button" value="up" (click)='voteUp()'>
-<p>Down Votes {{ quote.downvote }}</p>
-<input type="button" value="down" (click)='votedown()'>
-<p>submitted by {{ quote.subBywho }}</p>
-<p>{{ quote.dateupload | countdown }}</p>
+<div class="container">
 
-<input type="button" value="Delete Quote" (click)='deletequote(true)'>
+<p><span id="titleq">{{ quote.title}}</span></p>
+<p>Quote <span>{{ quote.quoteline }}</span></p>
+<p>Author <span>{{ quote.author }}</span></p>
+<div>
+  <p>Likes <span>{{ quote.upvote }}</span> </p>
+  <fa-icon [icon]="faThumbsUp" id="tup" (click)='voteUp()'></fa-icon>
+</div>
+<div>
+  <p>Dislikes <span>{{ quote.downvote }}</span></p>
+  <fa-icon [icon]="faThumbsDown" id="tdown" (click)='votedown()'></fa-icon>
+</div>
+<p>submitted by <span>{{ quote.subBywho }}</span></p>
+<p><span id="timeout">{{ quote.dateupload | countdown }}</span></p>
+
+<input type="button" value="Delete Quote" (click)='deletequote(true)' class="btn btn-danger">
+</div>

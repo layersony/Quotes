@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Quote } from '../quote'
-import { faThumbsUp, faThumbsDown, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faQuoteLeft, faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,8 +10,8 @@ import { faThumbsUp, faThumbsDown, faQuoteLeft } from '@fortawesome/free-solid-s
 })
 export class QuoteComponent implements OnInit {
 
-  faThumbsUp = faThumbsUp;
-  faThumbsDown=faThumbsDown;
+  faHeart = faHeart;
+  faHeartBroken=faHeartBroken;
   faQuoteLeft = faQuoteLeft;
   
   quotearr: Quote[] = [

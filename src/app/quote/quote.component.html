@@ -1,5 +1,5 @@
 <div class="home container">
-  <div class="header row justify-content-center align-items-center bg-secondary">
+  <div class="header row justify-content-center align-items-center">
     <div class='col-md-6 headerq text-white'>
       <h1>Quotes</h1>
     </div>
@@ -12,10 +12,10 @@
   <div class="thelist">
     <div class="list" *ngFor="let quote of quotearr;let qnum = index">
       <div [ngClass]='{"ishighest": highest}' class="quotelist">
-        <fa-icon [icon]="faQuoteLeft"></fa-icon>
-        <h4> {{qnum+1}}. {{ quote.title }} </h4>
-        <p><fa-icon [icon]="faThumbsUp"></fa-icon> {{ quote.upvote }} ||  <fa-icon [icon]="faThumbsDown"></fa-icon> {{ quote.downvote }}</p>
-        <button (click)='showDetail(qnum)' class="btn btn-primary btn-md">View Quote</button>
+        <fa-icon [icon]="faQuoteLeft" class="qicon"></fa-icon>
+        <h4>{{ quote.title }} </h4>
+        <p id="vpara"><fa-icon [icon]="faHeart" id="tup"></fa-icon> {{ quote.upvote }}   <fa-icon [icon]="faHeartBroken" id="tdown"></fa-icon> {{ quote.downvote }}</p>
+        <button (click)='showDetail(qnum)' class="btn btn-md">View Quote</button>
 
         <div *ngIf='quote.showquotes'>
           <app-quote-detail [quote]="quote" (upV)='upVt($event, qnum)' (dwV)='dwVt($event, qnum)'

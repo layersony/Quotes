@@ -1,0 +1,37 @@
+.container{
+  background-color: rgba(0, 0, 0, 0.549);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+p{
+  font-size: 19px;
+  font-weight: 600;
+}
+span{
+  color: white;
+  font-weight: 300;
+}
+#titleq{
+  font-size: 25px;
+  text-transform: capitalize;
+}
+#timeout{
+  font-size: 15px;
+  font-weight: 300;
+}
+fa-icon{
+  color: black;
+  font-size: 25px;
+}
+#tup{
+  color: white;
+  transition: ease-in-out 1s;
+}
+#tdown{
+  color: rgb(220, 10, 10);
+  transition: ease-in-out 1s;
+}
+#tup:hover, #tdown:hover{
+  font-size: 25px;
+}

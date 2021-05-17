@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote'
+import { faThumbsUp, faThumbsDown, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-quote-detail',
@@ -7,6 +9,8 @@ import { Quote } from '../quote'
   styleUrls: ['./quote-detail.component.css']
 })
 export class QuoteDetailComponent implements OnInit {
+  faThumbsUp = faThumbsUp;
+  faThumbsDown=faThumbsDown;
 
   @Input() quote !: Quote;
   @Output() upV = new EventEmitter<number>();

@@ -2,14 +2,33 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.ishighest{
-  background: yellow;
+.qicon{
+  color: black;
+  font-size: 25px;
+}
+#tup{
+  color: green;
+  transition: ease-in-out 1s;
+}
+#tdown{
+  color: red;
+  transition: ease-in-out 1s;
+}
+#tup:hover, #tdown:hover{
+  font-size: 25px;
 }
 
 .home{
   padding: 10px;
 }
-
+#vpara{
+  font-size: 19px;
+  font-weight: 300;
+}
+.header{
+  background-color: maroon;
+  border-radius: 4px;
+}
 .headerq h1{
   margin-right: 50px;
   font-size: 60px;
@@ -20,7 +39,7 @@
   width: 150px;
   font-size: 20px;
   float: right;
-  background-color: maroon;
+  background-color: grey;
 }
 .header button:hover{
   width: 150px;
@@ -44,13 +63,17 @@
 
 
 .quotelist{
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
   padding: 20px 15px;
   width: 100%;
   border-radius: 10px;
 }
 .quotelist h4{
   text-transform: capitalize;
+}
+.quotelist>.btn{
+  background-color: grey;
+  color: white;
 }
 /*Add Quotes*/
 .formquote{
