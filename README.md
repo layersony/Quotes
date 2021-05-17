@@ -1,6 +1,6 @@
 # Quotes
 
-#### Created on 2nd April 2021
+#### Created on 17nd March 2021
 #### By Samuel Maingi Mutunga
 
 ## Description 
@@ -55,4 +55,4 @@ sammaingi5@gmail.com
 ---
 
 ### License
-This Project is under the [MIT](LICENCE) license
+This Project is under the [MIT](LICENSE) license
