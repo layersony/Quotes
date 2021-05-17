@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Quote } from '../quote'
+import { faThumbsUp, faThumbsDown, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-quote',
@@ -8,6 +10,10 @@ import { Quote } from '../quote'
 })
 export class QuoteComponent implements OnInit {
 
+  faThumbsUp = faThumbsUp;
+  faThumbsDown=faThumbsDown;
+  faQuoteLeft = faQuoteLeft;
+  
   quotearr: Quote[] = [
     new Quote(1, 'Spiritual', 'I have so much to do that I shall spend the first three hours in prayer.', 'Martin Luther', 33, 20, 'Maingi', new Date(2020,1,1)),
     new Quote(2, 'trial2', 'trialtrialtrial2222222', 'long list of trial2', 75, 12, 'Maingi', new Date(2020,1,1)),

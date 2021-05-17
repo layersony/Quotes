@@ -7,14 +7,7 @@
 }
 
 .home{
-  background-color: blue;
   padding: 10px;
-}
-
-.list{
-  background-color: blueviolet;
-  padding: 10px;
-  margin: 10px 5px;
 }
 
 .headerq h1{
@@ -27,6 +20,7 @@
   width: 150px;
   font-size: 20px;
   float: right;
+  background-color: maroon;
 }
 .header button:hover{
   width: 150px;
@@ -35,10 +29,28 @@
   color: black;
 }
 
+/* quote list*/
+.thelist{
+  background-color: rgba(0, 0, 0, 0.515);
+  margin-top: 10px;
+  width: 75%;
+  border-radius: 10px;
+}
+
+.list{
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+
 .quotelist{
   background-color: beige;
-  padding: 10px 5px;
-  max-width: 50%;
+  padding: 20px 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+.quotelist h4{
+  text-transform: capitalize;
 }
 /*Add Quotes*/
 .formquote{
